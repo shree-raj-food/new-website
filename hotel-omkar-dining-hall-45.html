@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Omkar Dining Hall | Authentic Unlimited Thali in Tathawade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #991B1B; /* Rich Crimson Maroon */
+      --primary-hover: #7F1D1D;
+      --accent: #D97706; /* Warm Amber Gold */
+      --accent-light: #FEF3C7;
+      --bg-cream: #FDFBF7;
+      --bg-card: #FFFFFF;
+      --text-dark: #1C1917;
+      --text-muted: #78716C;
+      --border-light: #E7E5E4;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 12px 24px -6px rgba(153, 27, 27, 0.08);
+      --shadow-lg: 0 20px 40px -10px rgba(0,0,0,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { 
+      overflow-x: hidden; 
+      max-width: 100%; 
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img { max-width: 100%; height: auto; }
+    h1, h2, h3, h4, .font-serif { font-family: 'Marcellus', serif; }
+
+    /* Sticky Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Marcellus', serif;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(153, 27, 27, 0.25);
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'Marcellus', serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(153, 27, 27, 0.3);
+      border: 1px solid transparent;
+    }
+
+    .btn-cta:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(153, 27, 27, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--primary);
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1.5px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 80px 24px 100px;
+      background: linear-gradient(180deg, rgba(254, 243, 199, 0.4) 0%, rgba(253, 251, 247, 1) 100%);
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.03;
+      background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #B45309;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 52px;
+      line-height: 1.15;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card-preview {
+      position: relative;
+      background: #FFF;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(217, 119, 6, 0.15);
+    }
+
+    .thali-visual {
+      width: 100%;
+      height: 340px;
+      background: linear-gradient(135deg, #7F1D1D, #991B1B);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      text-align: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thali-visual::before {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 2px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .thali-icon {
+      font-size: 64px;
+      margin-bottom: 12px;
+    }
+
+    .thali-visual h3 {
+      font-size: 26px;
+      color: #FEF3C7;
+      margin-bottom: 8px;
+    }
+
+    .thali-visual p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 260px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat-box {
+      background: var(--bg-cream);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+
+    .stat-number {
+      font-family: 'Marcellus', serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* General Section Layout */
+    .section {
+      padding: 80px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 56px;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 38px;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-content h3 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      font-size: 15px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .about-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .feature-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .about-card-box {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      border-left: 6px solid var(--accent);
+      position: relative;
+    }
+
+    .quote-mark {
+      font-family: 'Marcellus', serif;
+      font-size: 80px;
+      line-height: 0;
+      position: absolute;
+      top: 40px;
+      right: 32px;
+      color: var(--accent-light);
+      z-index: 0;
+    }
+
+    .about-card-text {
+      position: relative;
+      z-index: 1;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    /* Thali Menu Specials */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .menu-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(217, 119, 6, 0.4);
+    }
+
+    .menu-header {
+      background: linear-gradient(135deg, #FFFDF9, #FEF3C7);
+      padding: 24px;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.15);
+      position: relative;
+    }
+
+    .menu-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .menu-title {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .menu-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .menu-body {
+      padding: 24px;
+      flex-grow: 1;
+    }
+
+    .menu-items-list {
+      list-style: none;
+    }
+
+    .menu-items-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+
+    .menu-items-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* Dining Highlights / Features */
+    .features-bg {
+      background: #1C1917;
+      color: #FFF;
+      padding: 80px 24px;
+      margin-top: 40px;
+    }
+
+    .features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .features-header h2 {
+      font-size: 38px;
+      color: #FEF3C7;
+      margin-bottom: 12px;
+    }
+
+    .features-header p {
+      color: #A8A29E;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #292524;
+      padding: 32px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid #44403C;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      background: rgba(217, 119, 6, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--accent);
+    }
+
+    .feature-card h4 {
+      font-size: 18px;
+      color: #FFF;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      color: #A8A29E;
+      line-height: 1.5;
+    }
+
+    /* Location & Contact */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .info-box {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      margin-bottom: 24px;
+    }
+
+    .info-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .info-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--accent-light);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-details h4 {
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .info-details p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .map-container {
+      background: #E7E5E4;
+      border-radius: var(--radius-md);
+      height: 100%;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-bg-pattern {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0.15;
+      background-image: radial-gradient(var(--text-dark) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    .map-content {
+      position: relative;
+      z-index: 1;
+      max-width: 320px;
+    }
+
+    .map-pin-big {
+      width: 64px;
+      height: 64px;
+      background: var(--primary);
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 20px rgba(153, 27, 27, 0.4);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #111827;
+      color: #9CA3AF;
+      padding: 40px 24px;
+      border-top: 3px solid var(--accent);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand h3 {
+      font-size: 20px;
+      color: #FFF;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsive Logic & Rules */
+    @media (max-width: 992px) {
+      .hero-container, .about-grid, .location-grid {
+        grid-template-columns: 1fr;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-title {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        padding: 24px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        z-index: 100;
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding: 40px 20px 60px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .section {
+        padding: 56px 20px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand-logo">
+        <div class="logo-badge">O</div>
+        <div class="brand-name">
+          <span class="brand-title">Hotel Omkar</span>
+          <span class="brand-subtitle">Dining Hall</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#specials">Thali Offerings</a></li>
+        <li><a href="#experience">Why Dine With Us</a></li>
+        <li><a href="#location">Hours & Location</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+      <a href="#location" class="btn-cta">Visit Us</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-container">
+      <div class="hero-text reveal">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          Unlimited Authentic Dining Experience
+        </div>
+        <h1 class="hero-title">Pure Flavors & Traditional Hospitality in Tathawade</h1>
+        <p class="hero-subtitle">
+          Savor the rich, comforting taste of authentic unlimited Thali dining. Cooked with traditional spices, pure ingredients, and served with unconditional warmth.
+        </p>
+        <div class="hero-actions">
+          <a href="#specials" class="btn-cta">Explore Menu Specials</a>
+          <a href="#location" class="btn-secondary">Find Directions</a>
+        </div>
+      </div>
+
+      <div class="hero-card-preview reveal">
+        <div class="thali-visual">
+          <div class="thali-icon">🍲</div>
+          <h3 class="font-serif">Unlimited Thali Feast</h3>
+          <p>Unlimited refills of freshly prepared vegetables, signature dal, hot bhakris, sweet delicacies & more.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Pure Veg</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">Unlimited</div>
+            <div class="stat-label">Warm Servings</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">Fresh</div>
+            <div class="stat-label">Daily Recipes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="about-content reveal">
+        <span class="section-tag">Welcome to Hotel Omkar</span>
+        <h2 class="section-title">The Art of Generous Indian Hospitality</h2>
+        <p>
+          Located conveniently at Bhujbal Chowk along the Service Road in Tathawade, <strong>Hotel Omkar Dining Hall</strong> is dedicated to serving wholesome, traditional meals that feel like home.
+        </p>
+        <p>
+          Our culinary philosophy is rooted in traditional Indian recipes—where every curry, bread, and sweet dish is prepared using time-honored techniques, authentic hand-ground spices, and uncompromised hygiene.
+        </p>
+        <div class="about-features">
+          <div class="about-feature-item">
+            <div class="feature-check">✓</div>
+            <span>Unlimited Hospitality</span>
+          </div>
+          <div class="about-feature-item">
+            <div class="feature-check">✓</div>
+            <span>Hygienic & Fresh</span>
+          </div>
+          <div class="about-feature-item">
+            <div class="feature-check">✓</div>
+            <span>Family Seating</span>
+          </div>
+          <div class="about-feature-item">
+            <div class="feature-check">✓</div>
+            <span>Authentic Spices</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card-box reveal">
+        <div class="quote-mark">“</div>
+        <div class="about-card-text">
+          "Atithi Devo Bhava — We honor every guest with unlimited warmth, rich culinary traditions, and an unforgettable dining hall experience."
+        </div>
+        <div style="font-weight: 700; color: var(--primary); font-size: 15px;">Hotel Omkar Dining Hall Team</div>
+        <div style="font-size: 13px; color: var(--text-muted);">Bhujbal Chowk, Tathawade</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thali Menu Specials Section -->
+  <section id="specials" class="section" style="background: rgba(254, 243, 199, 0.2); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="section-header reveal">
+      <span class="section-tag">What We Serve</span>
+      <h2 class="section-title">Our Dining Hall Specials</h2>
+      <p class="section-desc">Experience a bountiful feast served with love. Each item on our Thali is curated for balance, rich flavor, and satisfaction.</p>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Card 1 -->
+      <div class="menu-card reveal">
+        <div class="menu-header">
+          <span class="menu-badge">Popular</span>
+          <h3 class="menu-title">Unlimited Executive Thali</h3>
+          <p class="menu-tagline">Complete daily feast with unlimited refills</p>
+        </div>
+        <div class="menu-body">
+          <ul class="menu-items-list">
+            <li>2 Special Seasonal Sabzis</li>
+            <li>Authentic Paneer Delicacy</li>
+            <li>Traditional Dal Tadka / Amti</li>
+            <li>Hot Phulkas & Jowar / Bajra Bhakri</li>
+            <li>Steamed Fragrant Rice & Jeera Rice</li>
+            <li>Crispy Farsan & Snack of the Day</li>
+            <li>Sweet Dish, Salad, Pickle & Chutney</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="menu-card reveal">
+        <div class="menu-header">
+          <span class="menu-badge">Authentic</span>
+          <h3 class="menu-title">Maharashtrian Special Feast</h3>
+          <p class="menu-tagline">Traditional regional flavors & delicacies</p>
+        </div>
+        <div class="menu-body">
+          <ul class="menu-items-list">
+            <li>Special Pithla Bhakri Speciality</li>
+            <li>Bharli Vangi / Shev Bhaji</li>
+            <li>Spicy Kat Rassa & Varan</li>
+            <li>Freshly Made Hot Bhakri</li>
+            <li>Indrayani Rice with Pure Ghee</li>
+            <li>Authentic Solkadhi / Taak (Buttermilk)</li>
+            <li>Traditional Puran Poli / Basundi Sweet</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="menu-card reveal">
+        <div class="menu-header">
+          <span class="menu-badge">Daily Classic</span>
+          <h3 class="menu-title">Quick Lunch Thali</h3>
+          <p class="menu-tagline">Ideal for a quick, hearty weekday meal</p>
+        </div>
+        <div class="menu-body">
+          <ul class="menu-items-list">
+            <li>Choice of 2 Fresh Daily Vegetables</li>
+            <li>Homestyle Comfort Dal</li>
+            <li>Fresh Soft Chapatis</li>
+            <li>Steamed Rice</li>
+            <li>Fresh Salad & Crunchy Papad</li>
+            <li>Chilled Refreshing Buttermilk</li>
+            <li>Chef's Dessert Special</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features & Dining Experience -->
+  <section id="experience" class="features-bg">
+    <div class="features-container">
+      <div class="features-header reveal">
+        <h2>Why Dine At Omkar Dining Hall?</h2>
+        <p>Designed for family gatherings, everyday dining, and food lovers seeking pure, fulfilling Indian meals.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>100% Pure Vegetarian</h4>
+          <p>Prepared in a strict vegetarian kitchen ensuring supreme purity, hygiene, and authentic flavor.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <h4>Unlimited Refills</h4>
+          <p>Our attentive team ensures your plate is never empty with continuous, hot refills served with a smile.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Family Dining Hall</h4>
+          <p>Spacious, clean, and comfortable seating environment perfect for family gatherings and group lunches.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>Fast & Courteous</h4>
+          <p>Prompt service ensures you get piping hot food instantly without unnecessary waiting times.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section id="location" class="section">
+    <div class="section-header reveal">
+      <span class="section-tag">Plan Your Visit</span>
+      <h2 class="section-title">Location & Operating Hours</h2>
+      <p class="section-desc">Conveniently located on the Tathawade Service Road for locals, commuters, and travelers.</p>
+    </div>
+
+    <div class="location-grid">
+      <div class="reveal">
+        <div class="info-box">
+          <div class="info-header">
+            <div class="info-icon">📍</div>
+            <div class="info-details">
+              <h4>Our Address</h4>
+              <p>Hotel Omkar Dining Hall</p>
+            </div>
+          </div>
+          <p style="font-size: 15px; color: var(--text-dark); margin-left: 58px;">
+            Service Road, Bhujbal Chowk, Tathawade - 410005, Maharashtra, India.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <div class="info-header">
+            <div class="info-icon">⏰</div>
+            <div class="info-details">
+              <h4>Dining Hours</h4>
+              <p>Open 7 Days a Week</p>
+            </div>
+          </div>
+          <div style="margin-left: 58px; font-size: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span><strong>Lunch Service:</strong></span>
+              <span>11:30 AM – 3:30 PM</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span><strong>Dinner Service:</strong></span>
+              <span>7:00 PM – 11:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-bottom: 0;">
+          <div class="info-header">
+            <div class="info-icon">💡</div>
+            <div class="info-details">
+              <h4>Visitor Note</h4>
+              <p>Easy service road accessibility & parking available nearby.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container reveal">
+        <div class="map-bg-pattern"></div>
+        <div class="map-content">
+          <div class="map-pin-big">📍</div>
+          <h3 class="font-serif" style="font-size: 24px; color: var(--primary); margin-bottom: 8px;">Bhujbal Chowk, Tathawade</h3>
+          <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+            Located right off the Service Road in Tathawade. Look for the Hotel Omkar Dining Hall banner.
+          </p>
+          <a href="https://maps.google.com/?q=Bhujbal+Chowk+Tathawade" target="_blank" rel="noopener noreferrer" class="btn-cta">
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Hotel Omkar Dining Hall</h3>
+        <p>Authentic Pure Veg Unlimited Thali Dining in Tathawade</p>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="year"></span> Hotel Omkar Dining Hall. All Rights Reserved. | Bhujbal Chowk, Tathawade - 410005
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation toggle logic
+    document.getElementById('navToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close menu when clicking links on mobile
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Dynamic Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // IntersectionObserver scroll reveal animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
