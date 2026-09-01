@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premal Dental Clinic - Healthy Smiles for Life</title>
+    <style>
+        :root {
+            --primary-blue: #2A70C2;
+            --secondary-blue: #E0F2F7;
+            --text-dark: #333;
+            --text-light: #555;
+            --background-light: #F8F8F8;
+            --white: #FFFFFF;
+            --border-light: #DDD;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.7em; }
+            h3 { font-size: 1.3em; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 1.5em;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #4A90E2 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4em 1.5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 350px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 0.5em;
+            font-size: 3.5em;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            max-width: 700px;
+            opacity: 0.9;
+            margin-bottom: 1.5em;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 0.9em 1.8em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-blue);
+            color: var(--primary-blue);
+        }
+
+        .section {
+            padding: 4em 0;
+            text-align: center;
+        }
+
+        .section:nth-of-type(even) {
+            background-color: var(--secondary-blue);
+        }
+
+        .section-title {
+            margin-bottom: 1.5em;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2em;
+            text-align: left;
+            margin-top: 2em;
+        }
+
+        .service-item {
+            background-color: var(--white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.8em;
+        }
+
+        .service-item p {
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .testimonial-item {
+            background-color: var(--white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 1em;
+            font-size: 1.05em;
+            color: var(--text-dark);
+        }
+
+        .testimonial-item .author {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .contact-block {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            background-color: var(--white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .contact-block h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1em;
+        }
+
+        .contact-block p {
+            margin-bottom: 0.8em;
+            font-size: 1em;
+            color: var(--text-dark);
+        }
+
+        .contact-block a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .contact-block a:hover {
+            text-decoration: underline;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: var(--secondary-blue);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 1.5em;
+        }
+
+        .footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2em 1.5em;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3em 1em;
+            }
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .section {
+                padding: 3em 0;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .container {
+                padding: 1.5em 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Premal Dental Clinic</h1>
+            <p>Your Trusted Partner for Healthy, Radiant Smiles for Life.</p>
+            <a href="#contact" class="btn">Book Your Appointment Today</a>
+        </div>
+    </header>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Dental Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>General Dentistry</h3>
+                    <p>Routine check-ups, cleanings, fillings, and preventive care to maintain optimal oral health.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Teeth whitening, veneers, and bonding to enhance the aesthetics of your smile.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Root Canal Treatment</h3>
+                    <p>Expert care for infected or damaged teeth to alleviate pain and save your natural tooth.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Dental Implants</h3>
+                    <p>Permanent solutions for missing teeth, providing stability and a natural look.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Oral Surgery</h3>
+                    <p>Safe and effective procedures including extractions and other minor surgical interventions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Pediatric Dentistry</h3>
+                    <p>Gentle and comprehensive dental care tailored for our youngest patients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title">What Our Patients Say</h2>
+            <div class="testimonials-grid">
+                <!-- No testimonials provided, so this section will be empty -->
+            </div>
+            <p style="margin-top: 2em; font-style: italic; color: var(--text-dark);">
+                We are committed to providing exceptional care. Be the first to share your experience with Premal Dental Clinic!
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Visit Us Today</h2>
+            <div class="contact-info">
+                <div class="contact-block">
+                    <h3>Clinic Hours</h3>
+                    <p><strong>Monday - Saturday:</strong> 10:00 AM - 1:00 PM</p>
+                    <p><strong>Monday - Saturday:</strong> 5:00 PM - 8:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                    <p style="margin-top: 1.5em;">Walk-ins welcome, appointments preferred.</p>
+                </div>
+                <div class="contact-block">
+                    <h3>Contact & Location</h3>
+                    <p><strong>Address:</strong><br>
+                       Premal Dental Clinic, Punit Marg,<br>
+                       Maninagar, - 380008, Gujarat, India</p>
+                    <p><strong>Phone:</strong> <a href="tel:">[Phone Number Not Provided]</a></p>
+                    <p style="margin-top: 1.5em;">For appointments or inquiries, please call us during clinic hours.</p>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                Map of Premal Dental Clinic Location
+                <!-- In a real scenario, this would be an embedded Google Map -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Premal Dental Clinic. All rights reserved.</p>
+            <p>Designed with care for healthy smiles.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
