@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ace Dental - Your Smile, Our Priority</title>
+    <style>
+        :root {
+            --primary-color: #007bff; /* A nice blue, common in medical */
+            --secondary-color: #6c757d; /* Muted grey for accents */
+            --text-color: #343a40; /* Dark grey for readability */
+            --light-bg: #f8f9fa; /* Light grey background */
+            --white-bg: #ffffff;
+            --border-color: #e9ecef;
+            --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --heading-font-family: 'Poppins', sans-serif; /* A slightly more modern heading font */
+        }
+
+        /* Basic Reset & Body Styling */
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font-family);
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout & Spacing */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--white-bg);
+            text-align: center;
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-bg);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background-color: var(--white-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Placeholder for service icons/images */
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-bg);
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1; /* For better vertical alignment of text */
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--white-bg);
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-item {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .testimonial-item strong {
+            display: block;
+            text-align: right;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-bg);
+            padding-bottom: 0; /* No padding at the bottom because of map */
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            text-align: center;
+            background-color: var(--white-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .hours-list li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-top: 4rem; /* Spacing from contact info */
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-color);
+            color: var(--white-bg);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .contact-content {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: start; /* Align items to the start of their grid area */
+                text-align: left;
+            }
+
+            .contact-info {
+                text-align: left;
+            }
+
+            .hours-list {
+                text-align: left;
+            }
+
+            .map-placeholder {
+                margin-top: 0; /* Reset margin for larger screens */
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+
+            .hero p {
+                font-size: 1.8rem;
+            }
+
+            .contact h2 {
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                padding: 4rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Google Fonts Import - Poppins and Segoe UI are common system fonts, but Poppins for headings adds style */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Ace Dental</h1>
+            <p>Your Comfort, Our Care: Modern Dentistry for a Brighter Smile.</p>
+            <a href="#contact" class="btn">Schedule Your Appointment Today</a>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Dental Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <div class="service-icon">🦷</div>
+                    <h3>General Dentistry</h3>
+                    <p>Routine check-ups, cleanings, and preventative care to keep your smile healthy.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">✨</div>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Enhance your smile with teeth whitening, veneers, and other aesthetic treatments.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Restorative Dentistry</h3>
+                    <p>Fillings, crowns, bridges, and implants to restore function and appearance.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💡</div>
+                    <h3>Emergency Dental Care</h3>
+                    <p>Prompt attention for dental emergencies to relieve pain and address urgent issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Patients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"I always feel comfortable and well-cared for at Ace Dental. The staff is incredibly friendly and professional!"</p>
+                    <strong>- A Happy Patient</strong>
+                </div>
+                <div class="testimonial-item">
+                    <p>"My teeth have never looked better! The cosmetic dentistry services here are truly amazing."</p>
+                    <strong>- Satisfied Client</strong>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Highly recommend Ace Dental for anyone looking for a great dentist. They made my emergency visit so easy."</p>
+                    <strong>- Grateful Patient</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Ace Dental</strong></p>
+                    <p>67th Street<br>West New York, NJ 07093<br>United States of America</p>
+                    <!-- Phone number is not provided, so we omit it -->
+                    <p>Schedule your visit today!</p>
+                    <a href="#contact" class="btn">Book An Appointment</a>
+                </div>
+                <div class="contact-info">
+                    <p><strong>Opening Hours:</strong></p>
+                    <ul class="hours-list">
+                        <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
+                        <li>Saturday: By Appointment Only</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="map-placeholder">
+            <p>Map Placeholder: Ace Dental, 67th Street, West New York, NJ 07093</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Ace Dental. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
