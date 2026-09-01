@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Smilist Dental | Frank R. DePaola DDS & Associates - Hoboken, NJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #2d3748;
+      background-color: #ffffff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    img { max-width: 100%; }
+
+    /* Palette */
+    :root {
+      --primary: #0097d8;
+      --primary-dark: #007bb5;
+      --primary-light: #e6f5fb;
+      --navy: #0a2540;
+      --navy-light: #16385c;
+      --dark: #1a202c;
+      --gray-light: #f7fafc;
+      --gray-border: #e2e8f0;
+      --gray-text: #4a5568;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(0, 151, 216, 0.08);
+      --shadow-md: 0 10px 30px rgba(10, 37, 64, 0.08);
+      --shadow-lg: 0 20px 40px rgba(10, 37, 64, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    /* Header Nav exact spec requirement */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--gray-border);
+      padding: 12px 0;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 151, 216, 0.35);
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 151, 216, 0.45);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--gray-border);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 24px;
+        box-shadow: 0 12px 24px rgba(0,0,0,.1);
+        z-index: 100;
+        gap: 16px;
+        border-bottom: 2px solid var(--primary-light);
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .header-inner { padding: 0 16px; }
+      .header-inner .btn-cta { display: none; }
+      .nav-links .mobile-cta { display: block; width: 100%; text-align: center; }
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 13px;
+      padding: 8px 16px;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    .top-bar span {
+      background: var(--primary);
+      color: var(--white);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    /* Layout Utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section {
+      padding: 90px 0;
+    }
+    .section-tag {
+      display: inline-block;
+      color: var(--primary);
+      background: var(--primary-light);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin: 0 0 16px 0;
+    }
+    .section-desc {
+      font-size: 18px;
+      color: var(--gray-text);
+      max-width: 680px;
+      margin: 0 0 40px 0;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f0f8fd 0%, #ffffff 60%, #e6f5fb 100%);
+      padding: 80px 0 100px 0;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid rgba(0, 151, 216, 0.25);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+    .hero-badge .pulse {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin: 0 0 20px 0;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 span {
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 19px;
+      color: var(--gray-text);
+      margin: 0 0 32px 0;
+      line-height: 1.6;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(0, 151, 216, 0.15);
+      position: relative;
+    }
+    .hero-card-header {
+      border-bottom: 1px solid var(--gray-border);
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 4px 0;
+    }
+    .hero-card-sub {
+      font-size: 14px;
+      color: var(--gray-text);
+      margin: 0;
+    }
+    .quick-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+    }
+    .quick-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .quick-list li svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* Features Strip */
+    .features-bar {
+      background: var(--navy);
+      color: var(--white);
+      padding: 36px 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(0, 151, 216, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+    .feature-text h4 {
+      margin: 0 0 2px 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .feature-text p {
+      margin: 0;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* Services Section */
+    .services-section {
+      background: var(--gray-light);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(0, 151, 216, 0.3);
+    }
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      background: var(--primary-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .service-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 10px 0;
+    }
+    .service-desc {
+      font-size: 15px;
+      color: var(--gray-text);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      color: var(--white);
+      position: relative;
+    }
+    .about-box h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      color: var(--white);
+    }
+    .about-box p {
+      color: #cbd5e1;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .about-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .about-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* Dentists / Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .doctor-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--gray-border);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .doctor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .doctor-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-light) 0%, #bbeeef 100%);
+      border-radius: 50%;
+      margin: 0 auto 16px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 24px;
+      font-family: 'Outfit', sans-serif;
+    }
+    .doctor-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 4px 0;
+    }
+    .doctor-role {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 600;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Insurance Section */
+    .insurance-section {
+      background: linear-gradient(180deg, #f0f8fd 0%, #ffffff 100%);
+      border-top: 1px solid var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .insurance-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-border);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .insurance-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    /* Testimonial Section */
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(0, 151, 216, 0.2);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .quote-text {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--navy);
+      font-weight: 500;
+      font-style: italic;
+      margin: 0 0 24px 0;
+    }
+    .author-name {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 16px;
+      margin: 0;
+    }
+    .author-sub {
+      font-size: 13px;
+      color: var(--gray-text);
+    }
+
+    /* Hours & Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .contact-card, .hours-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      border: 1px solid var(--gray-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0 0;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .hours-table td {
+      padding: 10px 0;
+      border-bottom: 1px dotted var(--gray-border);
+      font-size: 15px;
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* Map Placeholder */
+    .map-box {
+      background: #e2e8f0;
+      border-radius: var(--radius-md);
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      color: var(--gray-text);
+      text-align: center;
+      padding: 20px;
+      border: 1px border var(--gray-border);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 0 30px 0;
+      border-top: 4px solid var(--primary);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-logo {
+      height: 38px;
+      background: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .contact-grid, .insurance-card {
+        grid-template-columns: 1fr;
+      }
+      .services-grid, .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero h1 { font-size: 40px; }
+      .section-title { font-size: 32px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid, .team-grid, .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 { font-size: 32px; }
+      section { padding: 60px 0; }
+      .hero-card, .about-box, .insurance-card, .contact-card, .hours-card {
+        padding: 24px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span>Welcoming New Patients</span> Modern Dental Care in Hoboken, NJ &bull; Call (201) 792-9400
+  </div>
+
+  <!-- Main Header & Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="frank-r-depaola-dds-associates-11-logo.png" alt="The Smilist Dental - Frank R. DePaola DDS & Associates" class="logo">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#dentists">Our Dentists</a></li>
+        <li><a href="#insurance">Insurance & Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Hours & Location</a></li>
+        <li class="mobile-cta" style="display:none;"><a href="tel:12017929400" class="btn-cta">Call (201) 792-9400</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+      <a href="tel:12017929400" class="btn-cta">Book / Call Now</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="hero-badge">
+            <span class="pulse"></span>
+            Frank R. DePaola DDS & Associates
+          </div>
+          <h1>Expert Dental Care Under One Roof in <span>Hoboken, NJ</span></h1>
+          <p>Experience comfortable, high-quality dentistry designed around your lifestyle. From routine cleanings to restorative and cosmetic procedures, our skilled team is here to keep your smile healthy and vibrant.</p>
+          <div class="hero-cta-group">
+            <a href="tel:12017929400" class="btn-cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (201) 792-9400
+            </a>
+            <a href="#contact" class="btn-secondary">
+              View Office Hours
+            </a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <h3 class="hero-card-title">Welcoming New Patients!</h3>
+              <p class="hero-card-sub">The Smilist Dental – Hoboken, NJ</p>
+            </div>
+            <ul class="quick-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Most Dental Insurance Plans Accepted
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Direct Insurance Claim Billing
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Emergency Appointments Seen Promptly
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                24/7 Online Bookings &amp; CareCredit®
+              </li>
+            </ul>
+            <a href="tel:12017929400" class="btn-cta" style="width: 100%; text-align: center; justify-content: center;">Schedule Your Visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Value Props Bar -->
+  <div class="features-bar">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Convenient Hours</h4>
+            <p>Open late Mon &amp; Thu until 8pm</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Insurance Friendly</h4>
+            <p>We submit claims on your behalf</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Comprehensive Team</h4>
+            <p>General dentists &amp; specialists</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Flexible Financing</h4>
+            <p>CareCredit® 0% &amp; low options</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <span class="section-tag">Carefully Crafted Patient Experience</span>
+          <h2 class="section-title">A Dental Experience Built Around Quality &amp; Convenience</h2>
+          <p class="section-desc">We believe that going to the dentist should be a comfortable, clear, and supportive experience from start to finish. From your first visit to ongoing care, our team focuses on clear communication, thoughtful treatment planning, and a welcoming environment designed around your needs.</p>
+          <a href="tel:12017929400" class="btn-cta">Call (201) 792-9400</a>
+        </div>
+        <div class="reveal">
+          <div class="about-box">
+            <h3>Why Hoboken Chooses Us</h3>
+            <p>Our highly-trained dentists care deeply about your oral health and will do all that they can to ensure that you receive only the highest level of care.</p>
+            <ul class="about-features">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0097d8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Patient education &amp; preventive tooth maintenance
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0097d8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Advanced modern dental technology
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0097d8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Emergency dental visits seen promptly
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0097d8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Online registration &amp; seamless payment options
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin: 0 auto 40px auto; max-width: 700px;">
+        <span class="section-tag">Complete Oral Health</span>
+        <h2 class="section-title">Comprehensive Dental Services</h2>
+        <p class="section-desc" style="margin-left: auto; margin-right: auto;">The Smilist of Hoboken provides routine and specialized treatments to keep your smile healthy, bright, and strong.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a9 9 0 0 1 9 9c0 5-9 11-9 11S3 16 3 11a9 9 0 0 1 9-9z"/><circle cx="12" cy="11" r="3"/></svg>
+          </div>
+          <h3 class="service-title">General Dentistry</h3>
+          <p class="service-desc">Routine exams, cleanings, and dental x-rays to maintain long-term oral health and prevent dental issues before they start.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3 class="service-title">Cosmetic Dentistry</h3>
+          <p class="service-desc">Enhance your smile’s aesthetic with tailored cosmetic treatments designed to improve shape, alignment, and appearance.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="service-title">Emergency Dentistry</h3>
+          <p class="service-desc">Unexpected dental emergencies are handled promptly with priority scheduling to relieve pain and restore your comfort.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/></svg>
+          </div>
+          <h3 class="service-title">Teeth Whitening</h3>
+          <p class="service-desc">Professional tooth whitening solutions to lift discoloration and brighten your smile quickly and safely.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3 class="service-title">Dental Implants</h3>
+          <p class="service-desc">Permanent, natural-looking tooth restoration for single or multiple missing teeth to revive confidence and bite strength.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="service-title">Braces &amp; Invisalign</h3>
+          <p class="service-desc">Modern orthodontic solutions to straighten misaligned teeth discreetly and effectively for all age groups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dentists / Team Section -->
+  <section id="dentists">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin: 0 auto 40px auto; max-width: 700px;">
+        <span class="section-tag">Expert Practitioners</span>
+        <h2 class="section-title">Meet Our Hoboken Dental Team</h2>
+        <p class="section-desc" style="margin-left: auto; margin-right: auto;">Our team of dedicated dental professionals brings high skill, gentle care, and deep commitment to every patient visit.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar">CC</div>
+          <h3 class="doctor-name">Dr. Chan Chung</h3>
+          <div class="doctor-role">Periodontist</div>
+          <p style="font-size: 14px; color: var(--gray-text); margin: 0;">Specialized periodontal and gum care expert committed to restorative dental health.</p>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar">PK</div>
+          <h3 class="doctor-name">Dr. Prajkta Khadse</h3>
+          <div class="doctor-role">General Dentist</div>
+          <p style="font-size: 14px; color: var(--gray-text); margin: 0;">Focused on preventive oral care and comprehensive restorative dental solutions.</p>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar">SL</div>
+          <h3 class="doctor-name">Dr. Sorina Lim</h3>
+          <div class="doctor-role">General Dentist</div>
+          <p style="font-size: 14px; color: var(--gray-text); margin: 0;">Providing compassionate patient-focused dentistry for optimal long-term health.</p>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar">SP</div>
+          <h3 class="doctor-name">Dr. Seema Patel</h3>
+          <div class="doctor-role">General Dentist</div>
+          <p style="font-size: 14px; color: var(--gray-text); margin: 0;">Dedicated to comfortable family dentistry, routine checkups, and smile care.</p>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar">AP</div>
+          <h3 class="doctor-name">Dr. Alex Pisapia</h3>
+          <div class="doctor-role">General Dentist</div>
+          <p style="font-size: 14px; color: var(--gray-text); margin: 0;">Expert general and cosmetic dentistry tailored to individual patient goals.</p>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-avatar">JY</div>
+          <h3 class="doctor-name">Dr. Jin Yi</h3>
+          <div class="doctor-role">General Dentist</div>
+          <p style="font-size: 14px; color: var(--gray-text); margin: 0;">Committed to delivering high-quality, gentle dental treatments in a relaxing setting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance & Pricing Section -->
+  <section id="insurance" class="insurance-section">
+    <div class="container">
+      <div class="insurance-card reveal">
+        <div>
+          <span class="insurance-badge">Affordable &amp; Accessible</span>
+          <h2 class="section-title" style="margin-bottom: 16px;">Insurance, Pricing &amp; Flexible Financing</h2>
+          <p style="font-size: 16px; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px;">
+            We proudly accept a wide range of dental insurance plans in Hoboken to help make your care simple and affordable. As a courtesy to Smilist patients, insurance claims are submitted directly on your behalf.
+          </p>
+          <p style="font-size: 15px; color: var(--gray-text); margin-bottom: 24px;">
+            Our team will review your benefits, explain coverage details, and outline out-of-pocket costs clearly before any treatment begins. Zero &amp; low-interest financing is available through <strong>CareCredit®</strong>.
+          </p>
+          <a href="tel:12017929400" class="btn-cta">Verify Your Insurance</a>
+        </div>
+        <div style="background: var(--primary-light); border-radius: var(--radius-md); padding: 28px; border: 1px solid rgba(0, 151, 216, 0.2);">
+          <h4 style="margin: 0 0 16px 0; color: var(--navy); font-size: 18px;">Insurance Highlights</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;" class="quick-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Most dental insurance plans accepted
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Direct billing &amp; claim submission
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              CareCredit® Financing Available
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Transparent upfront estimates
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Testimonial Section -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin: 0 auto 30px auto;">
+        <span class="section-tag">Patient Feedback</span>
+        <h2 class="section-title">What Our Patients Say</h2>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote-text">“Thank you so much to the doctor and his dental assistant for his professionalism and attention to the patient.”</p>
+        <p class="author-name">Maria Caceres</p>
+        <p class="author-sub">Smilist Dental Patient in Hoboken, NJ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Contact Location Section -->
+  <section id="contact" style="background: var(--gray-light);">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin: 0 auto 40px auto; max-width: 700px;">
+        <span class="section-tag">Visit Our Practice</span>
+        <h2 class="section-title">Hours &amp; Location in Hoboken</h2>
+        <p class="section-desc" style="margin-left: auto; margin-right: auto;">Conveniently located on Maxwell Lane with flexible evening and Saturday appointments available.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="hours-card reveal">
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 24px; color: var(--navy); margin: 0 0 16px 0;">Hours of Operation</h3>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>8:00 AM – 8:00 PM</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>8:00 AM – 6:00 PM</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>8:00 AM – 6:00 PM</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>8:00 AM – 8:00 PM</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>9:00 AM – 3:00 PM</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>9:00 AM – 2:00 PM*</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>CLOSED</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: var(--gray-text); margin-top: 14px; font-style: italic;">*Every other Saturday. Emergency appointments seen promptly.</p>
+        </div>
+
+        <div class="contact-card reveal">
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 24px; color: var(--navy); margin: 0 0 16px 0;">Contact &amp; Address</h3>
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong style="display:block; color: var(--navy);">Address</strong>
+                <span>1130 Maxwell Lane, Hoboken, NJ 07030</span>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong style="display:block; color: var(--navy);">Phone</strong>
+                <a href="tel:12017929400" style="color: var(--primary); text-decoration: none; font-weight: 600;">(201) 792-9400</a>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong style="display:block; color: var(--navy);">Email</strong>
+                <a href="mailto:hoboken@thesmilist.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">hoboken@thesmilist.com</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="map-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-bottom:8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <strong style="color: var(--navy);">The Smilist Dental – Hoboken, NJ</strong>
+            <span style="font-size:13px;">1130 Maxwell Lane, Hoboken, NJ 07030</span>
+            <a href="https://maps.google.com/?q=1130+Maxwell+Lane,+Hoboken,+NJ+07030" target="_blank" rel="noopener" style="margin-top:8px; font-size:13px; color:var(--primary); font-weight:700; text-decoration:none;">Get Directions &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="frank-r-depaola-dds-associates-11-logo.png" alt="The Smilist Dental" style="height:100%; width:auto; object-fit:contain;">
+          </div>
+          <p style="color: #94a3b8; font-size: 15px; margin: 0 0 16px 0; max-width: 400px;">
+            Frank R. DePaola DDS &amp; Associates at The Smilist Dental in Hoboken, NJ provides comprehensive dental care for patients of all ages.
+          </p>
+          <p style="color: #94a3b8; font-size: 14px; margin: 0;">
+            1130 Maxwell Lane, Hoboken, NJ 07030<br>
+            Phone: <a href="tel:12017929400" style="color:#38bdf8; text-decoration:none;">(201) 792-9400</a> | Email: hoboken@thesmilist.com
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--white); font-size: 16px; margin: 0 0 16px 0;">Quick Links</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; line-height:2.2;">
+            <li><a href="#about" style="color:#cbd5e1; text-decoration:none;">About Our Practice</a></li>
+            <li><a href="#services" style="color:#cbd5e1; text-decoration:none;">Dental Services</a></li>
+            <li><a href="#dentists" style="color:#cbd5e1; text-decoration:none;">Our Dentists</a></li>
+            <li><a href="#insurance" style="color:#cbd5e1; text-decoration:none;">Insurance &amp; Financing</a></li>
+            <li><a href="#contact" style="color:#cbd5e1; text-decoration:none;">Hours &amp; Location</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: var(--white); font-size: 16px; margin: 0 0 16px 0;">Patient Care</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; line-height:2.2;">
+            <li><span style="color:#cbd5e1;">Accepting New Patients</span></li>
+            <li><span style="color:#cbd5e1;">Emergency Dental Appointments</span></li>
+            <li><span style="color:#cbd5e1;">CareCredit® Accepted</span></li>
+            <li><span style="color:#cbd5e1;">Direct Insurance Billing</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="year"></span> Frank R. DePaola DDS &amp; Associates - The Smilist Dental. All rights reserved.</div>
+        <div>Expert Dental Clinic in Hoboken, NJ</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header navigation toggle (required exact structure)
+    document.getElementById('navToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close menu when clicking nav link on mobile
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Dynamic Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // IntersectionObserver scroll reveal animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
