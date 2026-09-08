@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>32 PEARLS® | Multispeciality Dental Clinics & Implant Centres</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; max-width: 100%; font-family: 'Plus Jakarta Sans', sans-serif; color: #1E293B; background-color: #FFFFFF; scroll-behavior: smooth; line-height: 1.6; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+    
+    /* Header & Navigation */
+    .site-header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid #E2E8F0; z-index: 1000; padding: 12px 24px; }
+    .header-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { height: 44px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; align-items: center; }
+    .nav-links a { text-decoration: none; color: #334155; font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease; }
+    .nav-links a:hover { color: #8B1E22; }
+    .nav-toggle { display: none; background: none; border: none; font-size: 26px; cursor: pointer; color: #0F172A; }
+    
+    .btn-cta { background: #8B1E22; color: #FFFFFF; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.25s ease; border: 1px solid #8B1E22; display: inline-block; }
+    .btn-cta:hover { background: #6B1317; border-color: #6B1317; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(139, 30, 34, 0.25); }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #FFFFFF; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,.1); z-index: 100; border-bottom: 1px solid #E2E8F0; gap: 16px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* Top Announcement Bar */
+    .top-bar { background: #0F172A; color: #F1F5F9; font-size: 0.85rem; padding: 8px 24px; text-align: center; font-weight: 500; border-bottom: 1px solid #1E293B; }
+    .top-bar strong { color: #F87171; }
+
+    /* Layout Utility */
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .section-padding { padding: 80px 0; }
+    .bg-light { background-color: #F8FAFC; }
+    .bg-dark { background-color: #0F172A; color: #FFFFFF; }
+    
+    /* Typography */
+    .section-tag { color: #8B1E22; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
+    .section-title { font-size: 2.25rem; font-weight: 800; color: #0F172A; line-height: 1.25; margin-bottom: 16px; }
+    .bg-dark .section-title { color: #FFFFFF; }
+    .section-subtitle { font-size: 1.1rem; color: #64748B; max-width: 680px; margin-bottom: 40px; font-weight: 400; }
+    .bg-dark .section-subtitle { color: #94A3B8; }
+
+    /* Hero Section */
+    .hero { padding: 60px 0 80px; background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #FEF2F2; color: #8B1E22; border: 1px solid #FCA5A5; font-weight: 700; font-size: 0.85rem; padding: 6px 14px; border-radius: 50px; margin-bottom: 20px; }
+    .hero-title { font-size: 3rem; font-weight: 800; color: #0F172A; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px; }
+    .hero-title span { color: #8B1E22; }
+    .hero-desc { font-size: 1.125rem; color: #475569; margin-bottom: 32px; line-height: 1.6; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-secondary { background: #F1F5F9; color: #0F172A; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1px solid #CBD5E1; transition: all 0.2s ease; }
+    .btn-secondary:hover { background: #E2E8F0; color: #0F172A; transform: translateY(-2px); }
+    .hero-image-wrapper { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    .hero-image-wrapper img { width: 100%; height: auto; object-fit: cover; }
+    .hero-overlay-card { position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 8px 20px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .hero-stat-item { text-align: center; }
+    .hero-stat-num { font-size: 1.25rem; font-weight: 800; color: #8B1E22; display: block; }
+    .hero-stat-lbl { font-size: 0.75rem; font-weight: 600; color: #64748B; text-transform: uppercase; }
+
+    /* Stats Ribbon */
+    .stats-ribbon { background: #8B1E22; color: #FFFFFF; padding: 36px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; text-align: center; }
+    .stat-card-val { font-size: 2.2rem; font-weight: 800; line-height: 1; margin-bottom: 6px; }
+    .stat-card-lbl { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; opacity: 0.9; letter-spacing: 0.5px; }
+
+    /* About Section */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .about-card { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 16px 20px; border-radius: 8px; }
+    .about-card h4 { font-size: 1rem; color: #8B1E22; margin-bottom: 4px; font-weight: 700; }
+    .about-card p { font-size: 0.875rem; color: #64748B; }
+
+    /* Services Section */
+    .services-grid { display: grid; grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) ); gap: 24px; }
+    .service-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: #F87171; }
+    .service-icon { width: 48px; height: 48px; background: #FEF2F2; color: #8B1E22; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.25rem; margin-bottom: 20px; }
+    .service-card h3 { font-size: 1.2rem; color: #0F172A; margin-bottom: 10px; font-weight: 700; }
+    .service-card p { font-size: 0.925rem; color: #64748B; margin-bottom: 16px; }
+    .service-link { font-size: 0.875rem; font-weight: 700; color: #8B1E22; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .service-link:hover { text-decoration: underline; }
+
+    /* Gallery / Tech Showcase */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .gallery-item { border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; background: #F8FAFC; position: relative; group: cursor-pointer; }
+    .gallery-item img { width: 100%; height: 240px; object-fit: cover; transition: transform 0.4s ease; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-caption { padding: 12px 16px; background: #FFFFFF; font-size: 0.85rem; font-weight: 600; color: #334155; border-top: 1px solid #E2E8F0; }
+
+    /* Dental Tourism Banner Section */
+    .tourism-banner { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: #FFFFFF; border-radius: 20px; padding: 48px; position: relative; overflow: hidden; margin-top: 40px; }
+    .tourism-content { max-width: 600px; z-index: 2; position: relative; }
+    .tourism-banner h3 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #FFFFFF; }
+    .tourism-banner p { color: #CBD5E1; margin-bottom: 24px; font-size: 1rem; }
+    .tourism-flags { margin-top: 24px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); }
+    .tourism-flags img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+    /* Centres Grid */
+    .centres-grid { display: grid; grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) ); gap: 24px; }
+    .centre-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; transition: all 0.3s ease; }
+    .centre-card:hover { border-color: #8B1E22; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+    .centre-badge { background: #FEF2F2; color: #8B1E22; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+    .centre-card h3 { font-size: 1.25rem; color: #0F172A; margin-bottom: 8px; font-weight: 700; }
+    .centre-card p { font-size: 0.9rem; color: #64748B; margin-bottom: 16px; line-height: 1.5; }
+    .centre-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #8B1E22; text-decoration: none; font-size: 0.95rem; }
+    .centre-phone:hover { text-decoration: underline; }
+
+    /* Booking & Contact Section */
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .booking-form { background: #FFFFFF; border: 1px solid #E2E8F0; padding: 36px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 700; color: #334155; margin-bottom: 6px; }
+    .form-control { width: 100%; padding: 12px 16px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s ease; }
+    .form-control:focus { outline: none; border-color: #8B1E22; box-shadow: 0 0 0 3px rgba(139,30,34,0.1); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit { width: 100%; background: #8B1E22; color: #FFFFFF; border: none; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s ease; }
+    .btn-submit:hover { background: #6B1317; }
+    .form-notice { font-size: 0.8rem; color: #64748B; margin-top: 12px; text-align: center; }
+
+    /* Map Box */
+    .map-box { background: #E2E8F0; border-radius: 16px; overflow: hidden; min-height: 320px; border: 1px solid #CBD5E1; display: flex; align-items: center; justify-content: center; position: relative; }
+    .map-placeholder { text-align: center; padding: 24px; color: #475569; }
+
+    /* Footer */
+    .site-footer { background: #0F172A; color: #94A3B8; padding: 60px 0 30px; font-size: 0.9rem; border-top: 1px solid #1E293B; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+    .footer-col h4 { color: #FFFFFF; font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: #94A3B8; text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-bottom { border-top: 1px solid #1E293B; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; }
+
+    /* Scroll Reveal Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.reveal-active { opacity: 1; transform: translateY(0); }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .booking-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-title { font-size: 2.4rem; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions a { text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-overlay-card { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <strong>32 PEARLS® Official Booking:</strong> Appointments accepted exclusively via direct phone call. ISO 9001:2015 Certified Clinic in Gujarat.
+  </div>
+
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="32-pearls-105-logo.png" alt="32 PEARLS Multispeciality Dental Clinics logo" class="logo">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#centres">Our Centres</a></li>
+        <li><a href="#tourism">Dental Tourism</a></li>
+        <li><a href="#book">Book Appointment</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+      <a href="tel:+919499557474" class="btn-cta">Call Naranpura Centre</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="hero-badge">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            1st ISO 9001:2015 Certified Clinic in Gujarat
+          </div>
+          <h1 class="hero-title">World-Class Dental Care &amp; <span>Implants</span> in Ahmedabad</h1>
+          <p class="hero-desc">Pioneers in painless root canals, digital smile designing, and advanced dental implantology. Experience personalized, high-precision oral health care backed by 20+ years of clinical excellence.</p>
+          <div class="hero-actions">
+            <a href="#book" class="btn-cta" style="padding: 14px 28px; font-size: 1rem;">Book Appointment</a>
+            <a href="tel:+919499557474" class="btn-secondary">Call +91 9499557474</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper reveal">
+          <img src="32-pearls-105-photo.png" alt="32 PEARLS Dental Clinic Treatment Room">
+          <div class="hero-overlay-card">
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">30,000+</span>
+              <span class="hero-stat-lbl">Families Served</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">15,000+</span>
+              <span class="hero-stat-lbl">Implant Cases</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">20+ Yrs</span>
+              <span class="hero-stat-lbl">Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Statistics Ribbon -->
+  <section class="stats-ribbon">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-card-val">20+</div>
+          <div class="stat-card-lbl">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-card-val">30,000+</div>
+          <div class="stat-card-lbl">Happy Families</div>
+        </div>
+        <div>
+          <div class="stat-card-val">15,000+</div>
+          <div class="stat-card-lbl">Implant Cases</div>
+        </div>
+        <div>
+          <div class="stat-card-val">25+</div>
+          <div class="stat-card-lbl">Expert Doctors</div>
+        </div>
+        <div>
+          <div class="stat-card-val">4</div>
+          <div class="stat-card-lbl">Ahmedabad Clinics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <span class="section-tag">About 32 PEARLS®</span>
+          <h2 class="section-title">Setting High Standards in Modern Dental Science</h2>
+          <p style="color: #475569; margin-bottom: 16px;">Under the leadership of <strong>Dr. Jaimin Patel</strong> (Dental Implantology) and <strong>Dr. Kunjal Patel</strong> (Athledent Sports Dentistry), 32 PEARLS® Multispeciality Dental Clinics is a premier dental care provider in Ahmedabad, Gujarat.</p>
+          <p style="color: #475569; margin-bottom: 24px;">We focus on identifying the root cause of every dental concern and applying modern molecular diagnostic technologies alongside digital imaging to deliver long-lasting, painless treatments.</p>
+          
+          <div class="about-highlights">
+            <div class="about-card">
+              <h4>1st Digital Smile Designer</h4>
+              <p>First and only certified Digital Smile Designer clinic in Ahmedabad.</p>
+            </div>
+            <div class="about-card">
+              <h4>ISO 9001:2015 Certified</h4>
+              <p>Recognized for stringent sterilization and international safety protocols.</p>
+            </div>
+            <div class="about-card">
+              <h4>In-House Digital Scanners</h4>
+              <p>Utilizing CBCT 3D X-Rays &amp; 3D Intraoral scanners for precision care.</p>
+            </div>
+            <div class="about-card">
+              <h4>Athledent Sports Dentistry</h4>
+              <p>Specialized custom sports guards and dental trauma protection for athletes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="gallery-item" style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.08);">
+            <img src="32-pearls-105-extra1.jpg" alt="32 PEARLS Modern Clinic Infrastructure" style="height: 380px;">
+            <div class="gallery-caption" style="padding: 16px;">
+              <strong>Advanced Clinical Infrastructure</strong>
+              <p style="font-size: 0.8rem; color: #64748B; font-weight: 400; margin-top: 4px;">State-of-the-art dental chairs equipped with laser technology and strict infection control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Services -->
+  <section class="section-padding bg-light" id="services">
+    <div class="container">
+      <div class="text-center reveal" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+        <span class="section-tag">Multispeciality Treatments</span>
+        <h2 class="section-title">Complete Dental Services Under One Roof</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">Equipped with cutting-edge technology to handle simple preventative care to complex surgical full mouth rehabilitations.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">01</div>
+          <h3>Dental Implants</h3>
+          <p>Permanent, natural-looking replacement for missing teeth using All-on-4, All-on-6, Zygomatic, and Pterygoid Implant procedures.</p>
+          <a href="#book" class="service-link">Consult Specialist &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">02</div>
+          <h3>Digital Smile Makeover</h3>
+          <p>Transform your smile with Digital Smile Design (DSD), ultra-thin Zirconia Crowns, and custom Porcelain Veneers.</p>
+          <a href="#book" class="service-link">Transform Your Smile &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">03</div>
+          <h3>Invisible Braces &amp; Aligners</h3>
+          <p>Straighten crooked or misaligned teeth discretely with modern clear aligners and orthodontic treatments.</p>
+          <a href="#book" class="service-link">Explore Aligners &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">04</div>
+          <h3>Painless Root Canal (R.C.T.)</h3>
+          <p>Save infected or damaged natural teeth comfortably with quick, painless single-visit root canal therapy.</p>
+          <a href="#book" class="service-link">Book R.C.T. &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">05</div>
+          <h3>Full Mouth Rehabilitation</h3>
+          <p>Comprehensive restorative solutions restoring bite function, aesthetics, and oral health for complex cases.</p>
+          <a href="#book" class="service-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">06</div>
+          <h3>Laser &amp; Digital Dentistry</h3>
+          <p>Minimally invasive gum surgery, cavity disinfection, CBCT 3D X-Rays, and 3D intraoral digital impressions.</p>
+          <a href="#book" class="service-link">Discover Tech &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">07</div>
+          <h3>Athledent Sports Dentistry</h3>
+          <p>Pioneering sports dentistry by Dr. Kunjal Patel, providing performance mouthguards and athlete oral care.</p>
+          <a href="#book" class="service-link">Athledent Info &rarr;</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">08</div>
+          <h3>Pediatric &amp; Geriatric Care</h3>
+          <p>Gentle child dental treatments and specialized diabetic/cardiac dental protocols for elderly patients.</p>
+          <a href="#book" class="service-link">Family Care &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinic Facilities & Tech Showcase Gallery -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom: 40px;">
+        <span class="section-tag">Clinical Excellence</span>
+        <h2 class="section-title">World-Class Facilities &amp; Technology</h2>
+        <p class="section-subtitle">Take a look inside 32 PEARLS® clinics in Ahmedabad.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <img src="32-pearls-105-extra3.jpg" alt="32 PEARLS Diagnostic & Consultation Area">
+          <div class="gallery-caption">Advanced Diagnostic &amp; Consultation Suite</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="32-pearls-105-extra4.jpg" alt="32 PEARLS Sterilization & Patient Safety Area">
+          <div class="gallery-caption">Strict Post-COVID Hygiene &amp; Sterilization</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="32-pearls-105-extra5.jpg" alt="32 PEARLS Dental Treatment Facility">
+          <div class="gallery-caption">Comfortable Patient Care Stations</div>
+        </div>
+      </div>
+
+      <!-- Dental Tourism Feature Box -->
+      <div class="tourism-banner reveal" id="tourism">
+        <div class="tourism-content">
+          <span style="color: #F87171; font-weight: 800; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">International Standard Care</span>
+          <h3>Dental Tourism in Ahmedabad</h3>
+          <p>Patients travel from across North America, Europe, Australia, and the Middle East to experience world-class dental implant procedures and smile redesigns at a fraction of international costs.</p>
+          <a href="#book" class="btn-cta" style="background: #FFFFFF; color: #0F172A; border-color: #FFFFFF;">Plan Overseas Visit</a>
+        </div>
+        <div class="tourism-flags">
+          <img src="32-pearls-105-extra0.png" alt="Dental Tourism International Patient Welcome Flags Banner">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four Centres Directory -->
+  <section class="section-padding bg-light" id="centres">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+        <span class="section-tag">Convenient Locations</span>
+        <h2 class="section-title">4 Modern Dental Centres Across Ahmedabad</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">Select your nearest branch for quick appointments and expert dental consultations.</p>
+      </div>
+
+      <div class="centres-grid">
+        <!-- Centre 1 -->
+        <div class="centre-card reveal">
+          <span class="centre-badge">Main Branch</span>
+          <h3>Naranpura Centre</h3>
+          <p>311-312, 132 Feet Ring Rd, near Jay Mangal Society, AEC Char Rasta, Naranpura, Ahmedabad, Gujarat 380013</p>
+          <a href="tel:+919499557474" class="centre-phone">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            +91 9499557474
+          </a>
+        </div>
+
+        <!-- Centre 2 -->
+        <div class="centre-card reveal">
+          <span class="centre-badge">Branch Clinic</span>
+          <h3>Science City Centre</h3>
+          <p>Science City Road, Sola, Ahmedabad, Gujarat</p>
+          <a href="tel:+917069089250" class="centre-phone">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            +91 7069089250
+          </a>
+        </div>
+
+        <!-- Centre 3 -->
+        <div class="centre-card reveal">
+          <span class="centre-badge">Branch Clinic</span>
+          <h3>Motera Centre</h3>
+          <p>Motera Stadium Road, Sabarmati, Ahmedabad, Gujarat</p>
+          <a href="tel:+919054496813" class="centre-phone">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            +91 9054496813
+          </a>
+        </div>
+
+        <!-- Centre 4 -->
+        <div class="centre-card reveal">
+          <span class="centre-badge">Branch Clinic</span>
+          <h3>South Bopal Centre</h3>
+          <p>South Bopal Commercial Hub, Ahmedabad, Gujarat</p>
+          <a href="tel:+919558384528" class="centre-phone">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            +91 9558384528
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment Booking & Location Section -->
+  <section class="section-padding" id="book">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-form reveal">
+          <span class="section-tag">Direct Scheduling</span>
+          <h2 style="font-size: 1.75rem; font-weight: 800; color: #0F172A; margin-bottom: 20px;">Request an Appointment</h2>
+          
+          <form onsubmit="event.preventDefault(); alert('Thank you for submitting your details. Our clinical team will call you shortly to confirm your exact appointment date and time.');">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210" required>
+              </div>
+              <div class="form-group">
+                <label for="centre">Preferred Centre *</label>
+                <select id="centre" class="form-control" required>
+                  <option value="Naranpura">Naranpura Centre</option>
+                  <option value="Science City">Science City Centre</option>
+                  <option value="Motera">Motera Centre</option>
+                  <option value="South Bopal">South Bopal Centre</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="patientType">Patient Status</label>
+                <select id="patientType" class="form-control">
+                  <option value="New">New Patient</option>
+                  <option value="Returning">Returning Patient</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="preferredTime">Preferred Time</label>
+                <select id="preferredTime" class="form-control">
+                  <option value="Morning">Morning</option>
+                  <option value="Afternoon">Afternoon</option>
+                  <option value="Evening">Evening</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="treatment">Dental Concern / Treatment Needed</label>
+              <textarea id="treatment" class="form-control" rows="3" placeholder="e.g. Toothache, Dental Implant consultation, Alignment..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Booking Request</button>
+            <p class="form-notice">Note: You will receive a direct confirmation call from our clinic staff for the exact date and time.</p>
+          </form>
+        </div>
+
+        <div class="reveal">
+          <span class="section-tag">Find Us</span>
+          <h2 style="font-size: 1.75rem; font-weight: 800; color: #0F172A; margin-bottom: 20px;">Naranpura Main Clinic</h2>
+          <div class="map-box">
+            <div class="map-placeholder">
+              <svg width="48" height="48" fill="none" stroke="#8B1E22" stroke-width="2" viewBox="0 0 24 24" style="margin: 0 auto 12px;"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <p style="font-weight: 700; color: #0F172A; margin-bottom: 4px;">32 PEARLS® Naranpura</p>
+              <p style="font-size: 0.875rem; color: #64748B;">311-312, 132 Feet Ring Rd, near Jay Mangal Society,<br>AEC Char Rasta, Naranpura, Ahmedabad, Gujarat 380013</p>
+              <a href="https://maps.google.com" target="_blank" class="btn-cta" style="margin-top: 16px; font-size: 0.85rem; padding: 8px 16px;">Open in Google Maps</a>
+            </div>
+          </div>
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 20px; border-radius: 12px; margin-top: 24px;">
+            <h4 style="font-size: 0.95rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">Clinic Operating Hours</h4>
+            <p style="font-size: 0.875rem; color: #475569;">Monday – Saturday: 9:00 AM – 8:30 PM<br>Sunday: By Prior Emergency Appointment Only</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="32-pearls-105-logo.png" alt="32 PEARLS Logo" style="height: 380; max-height: 44px; filter: brightness(0) invert(1); margin-bottom: 16px;">
+          <p style="font-size: 0.875rem; color: #94A3B8; margin-bottom: 16px;">32 PEARLS® Multispeciality Dental Clinics &amp; Implant Centres is Gujarat’s leading ISO 9001:2015 certified dental clinic network specializing in root canals, digital smile makeovers, and dental implants.</p>
+          <p style="font-size: 0.85rem; color: #64748B;">© 2024 32 PEARLS®. All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Dental Implants</a></li>
+            <li><a href="#services">Digital Smile Makeover</a></li>
+            <li><a href="#services">Painless Root Canal (RCT)</a></li>
+            <li><a href="#services">Invisible Aligners</a></li>
+            <li><a href="#services">Laser &amp; Digital Scan</a></li>
+            <li><a href="#services">Athledent Sports Care</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Centres</h4>
+          <ul class="footer-links">
+            <li><a href="#centres">Naranpura Branch</a></li>
+            <li><a href="#centres">Science City Branch</a></li>
+            <li><a href="#centres">Motera Branch</a></li>
+            <li><a href="#centres">South Bopal Branch</a></li>
+            <li><a href="#tourism">Dental Tourism</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Call Helpline</h4>
+          <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 8px;">Naranpura: +91 9499557474</p>
+          <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 8px;">Science City: +91 7069089250</p>
+          <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 8px;">Motera: +91 9054496813</p>
+          <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 16px;">South Bopal: +91 9558384528</p>
+          <a href="#book" class="btn-cta" style="font-size: 0.85rem; padding: 8px 16px;">Book Appointment</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          ISO 9001:2015 Certified Dental Clinic | First Digital Smile Designer of Ahmedabad
+        </div>
+        <div>
+          Official Website: <a href="https://www.32pearlsdental.com/" target="_blank" style="color: #F87171; text-decoration: underline;">www.32pearlsdental.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Navigation & Motion Reveals -->
+  <script>
+    // Header Toggle Script
+    document.getElementById('navToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Vanilla JS Intersection Observer for tasteful scroll reveals
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
